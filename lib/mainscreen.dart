@@ -35,14 +35,14 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Movies TVShows"),
+          title: Text("SecCams"),
           backgroundColor: Colors.purple[900],
           bottom: TabBar(
             tabs: [
-              
+              Tab(icon: Icon(Icons.tv_sharp)),
               Tab(icon: Icon(Icons.movie_creation_sharp)),
               Tab(icon: Icon(Icons.tv_sharp)),
             ],
