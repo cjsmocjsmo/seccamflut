@@ -39,10 +39,10 @@ class MainScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text("Movies TVShows"),
-          backgroundColor: Colors.lightPurple[900],
+          backgroundColor: Colors.purple[900],
           bottom: TabBar(
             tabs: [
-              Tab(Text("Fuck")),
+              
               Tab(icon: Icon(Icons.movie_creation_sharp)),
               Tab(icon: Icon(Icons.tv_sharp)),
             ],
