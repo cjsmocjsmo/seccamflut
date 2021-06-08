@@ -89,10 +89,10 @@ class MainScreen extends StatelessWidget {
           ),
           child: TabBarView(
             children: [
-              moviesListView,
-              // tvShowsListView(),
-              tvShowsListView(context),
-              // lowerDecksListView(context),
+              // moviesListView,
+              // // tvShowsListView(),
+              // tvShowsListView(context),
+              // // lowerDecksListView(context),
 
             ],
           ),
@@ -106,117 +106,54 @@ class MainScreen extends StatelessWidget {
   }
 }
 
-Widget moviesListView = ListView.builder(
-  padding: const EdgeInsets.all(10.0),
-  itemCount: movies.length,
-  itemBuilder: (BuildContext context, int index) {
-    return 
-    InkWell(
-      splashColor: Colors.red,
-      // onTap: () {}, // button pressed
-      child: 
-        // ListTile(
-        //   selected: false,
-        //   tileColor: Colors.amber,
-        //   title: Text(
-        //     '${movies[index]}',
-        //     style: TextStyle(
-        //       color: Colors.black,
-        //       fontSize: 29.0,
-        //       fontWeight: FontWeight.bold,
-        //     ),
-        //   ),
-        //   trailing: Icon(Icons.play_arrow, color: Colors.purple[900], size: 29.0),
-        //   // selectedTileColor: Colors.blue,
-          
-        //   onTap: () {
-        //     Navigator.pushNamed(context, '/${movies[index]}');
-        //   },
-        // );
-      // Container(
-      //   // width: 120.0,
-      //   height: 80.0,
-      //   child: ElevatedButton(
-      //     onPressed: null,
-      //     child: Container(
-      //       height: 75,
-      //       color: Colors.amber[400],
-      //       child: Padding(
-      //         padding: EdgeInsets.fromLTRB(
-      //           20.0, 13.0, 0.0, 0.0,
-      //         ),
-      //         child: Row(
-      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //           children: <Widget>[
-      //             Text(
-      //               '${movies[index]}',
-      //               style: TextStyle(
-      //                 color: Colors.black,
-      //                 fontSize: 29.0,
-      //                 fontWeight: FontWeight.bold,
-      //               ),
-      //             ),
-      //             Icon(Icons.play_arrow, color: Colors.purple[900], size: 29.0),
-      //           ],
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
+// Widget moviesListView = ListView.builder(
+//   padding: const EdgeInsets.all(10.0),
+//   itemCount: movies.length,
+//   itemBuilder: (BuildContext context, int index) {
+//     return 
+//     InkWell(
+//       splashColor: Colors.red,
+//       // onTap: () {}, // button pressed
+//       child: 
+
       
-      Container(
-        height: 50,
-        color: Colors.amber[400],
-        child: Center(
-            child: Text('${movies[index]}',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 28.0,
-            )
-          )
-        ),
-      ),
+//       Container(
+//         height: 50,
+//         color: Colors.amber[400],
+//         child: Center(
+//             child: Text('${movies[index]}',
+//             style: TextStyle(
+//               fontWeight: FontWeight.bold,
+//               fontSize: 28.0,
+//             )
+//           )
+//         ),
+//       ),
 
 
 
 
-      onTap: () {
-        Navigator.pushNamed(context, '/${movies[index]}');
-      },
-    );
-  }
-);
+//       onTap: () {
+//         Navigator.pushNamed(context, '/${movies[index]}');
+//       },
+//     );
+//   }
+// );
 
-Widget tvShowsListView(BuildContext context) {
-  return ListView(
-  shrinkWrap: true,
-  padding: const EdgeInsets.all(10.0),
-  children: <Widget>[
-    AlienWorldsCard(),
-    AlteredCarbonCard(),
-    BadBatchCard(),
-    DiscoveryCard(),
-    EnterpriseCard(),
-    FalconWinterSoldierCard(),
-    ForAllManKindCard(),
-    LostInSpaceCard(),
-    LowerDecksCard(),
-    MandalorianCard(),
-    NextGenCard(),
-    OrvilleCard(),
-    PicardCard(),
-    RaisedByWolvesCard(),
-    StarTrekTVCard(),
-    VoyagerCard(),
-    WandaVisionCard(),
+// Widget tvShowsListView(BuildContext context) {
+//   return ListView(
+//   shrinkWrap: true,
+//   padding: const EdgeInsets.all(10.0),
+//   children: <Widget>[
+    
     
     
     
     
 
 
-  ]);
-}
+//   ]);
+// }
 
 
 
