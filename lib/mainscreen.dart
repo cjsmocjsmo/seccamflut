@@ -89,6 +89,8 @@ class MainScreen extends StatelessWidget {
           ),
           child: TabBarView(
             children: [
+              Text('fuck'),
+              Text("me"),
               // moviesListView,
               // // tvShowsListView(),
               // tvShowsListView(context),
