@@ -42,50 +42,51 @@ class MainScreen extends StatelessWidget {
           backgroundColor: Colors.purple[900],
           bottom: TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.tv_sharp)),
-              Tab(icon: Icon(Icons.movie_creation_sharp)),
-              Tab(icon: Icon(Icons.tv_sharp)),
+
+              Tab(icon: Icon(Icons.videocam)),
+              Tab(icon: Icon(Icons.security)),
+              Tab(icon: Icon(Icons.video_camera_front)),
             ],
           ),
         ),
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.lightGreen[900],
-          child: Row(
-            children: [
-              Spacer(),
-              IconButton(
-                icon: Icon(Icons.skip_previous, color: Colors.white), 
-                onPressed: () {
-                  final String apiPrevious = "http://192.168.0.42:8181/Previous";
-                  previousMov(apiPrevious);
-                },
-              ),
-              Spacer(),
-              IconButton(
-                icon: Icon(Icons.skip_next, color: Colors.white), 
-                onPressed: () {
-                  final String apiNext = "http://192.168.0.42:8181/Next";
-                  nextMov(apiNext);
-                },
-              ),
-              Spacer(),
-            ],
-          ),
-        ),
-        floatingActionButton:
-          FloatingActionButton(
-          child: Icon(Icons.close_sharp), 
-          onPressed: () { 
-            final String apiStop = "http://192.168.0.42:8181/Stop";
-            stopMov(apiStop); 
-          }
-        ),
-        floatingActionButtonLocation:
-            // FloatingActionButtonLocation.endDocked,
-            FloatingActionButtonLocation.endFloat,
+        // bottomNavigationBar: BottomAppBar(
+        //   color: Colors.lightGreen[900],
+        //   child: Row(
+        //     children: [
+        //       Spacer(),
+        //       IconButton(
+        //         icon: Icon(Icons.skip_previous, color: Colors.white), 
+        //         onPressed: () {
+        //           final String apiPrevious = "http://192.168.0.42:8181/Previous";
+        //           previousMov(apiPrevious);
+        //         },
+        //       ),
+        //       Spacer(),
+        //       IconButton(
+        //         icon: Icon(Icons.skip_next, color: Colors.white), 
+        //         onPressed: () {
+        //           final String apiNext = "http://192.168.0.42:8181/Next";
+        //           nextMov(apiNext);
+        //         },
+        //       ),
+        //       Spacer(),
+        //     ],
+        //   ),
+        // ),
+        // floatingActionButton:
+        //   FloatingActionButton(
+        //   child: Icon(Icons.close_sharp), 
+        //   onPressed: () { 
+        //     final String apiStop = "http://192.168.0.42:8181/Stop";
+        //     stopMov(apiStop); 
+        //   }
+        // ),
+        // floatingActionButtonLocation:
+        //     // FloatingActionButtonLocation.endDocked,
+        //     FloatingActionButtonLocation.endFloat,
         body: Container(
           decoration: BoxDecoration(
-            color: Colors.lightGreenAccent.shade400,
+            color: Colors.purple[600],
           ),
           child: TabBarView(
             children: [
