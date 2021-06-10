@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
+import 'maincolumn.dart';
 
 
 
@@ -86,13 +86,14 @@ class MainScreen extends StatelessWidget {
         //     FloatingActionButtonLocation.endFloat,
         body: Container(
           decoration: BoxDecoration(
-            color: Colors.purple[600],
+            color: Colors.purple[300],
           ),
           child: TabBarView(
             children: [
+              mainColumn,
               Text('fuck'),
-              Text("me"),
-               Text("again"),
+              
+               mainColumn,
               // moviesListView,
               // // tvShowsListView(),
               // tvShowsListView(context),
@@ -109,6 +110,9 @@ class MainScreen extends StatelessWidget {
     return stop;
   }
 }
+
+
+// Widget motionText = Card(child: ListTile(title: Text('One-line ListTile')));
 
 // Widget moviesListView = ListView.builder(
 //   padding: const EdgeInsets.all(10.0),
