@@ -9,7 +9,6 @@ class HealthCard extends StatelessWidget {
   Future<List<dynamic>> fetchHealthEvents() async {
 
     var result = await http.get(Uri.parse(apiUrl));
-    print(json.decode(result.body));
     return json.decode(result.body)['health'];
 
   }
@@ -30,9 +29,7 @@ class HealthCard extends StatelessWidget {
           child: FutureBuilder<List<dynamic>>(
             future: fetchHealthEvents(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
-              print(snapshot.data);
               if(snapshot.hasData){
-                print(snapshot.data);
                 return ListView(
                   shrinkWrap: true,
                   children: <Widget>[

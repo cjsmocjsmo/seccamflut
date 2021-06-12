@@ -8,7 +8,7 @@ class PingCard extends StatelessWidget {
 
   Future<List<dynamic>> fetchPingEvents() async {
     var result = await http.get(Uri.parse(apiUrl));
-    print(json.decode(result.body)['ping_results']);
+    // print(json.decode(result.body)['ping_results']);
     return json.decode(result.body)['ping_results'];
   }
 
@@ -28,9 +28,9 @@ class PingCard extends StatelessWidget {
           child: FutureBuilder<List<dynamic>>(
             future: fetchPingEvents(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
-              print(snapshot.data);
+              // print(snapshot.data);
               if(snapshot.hasData){
-                print(snapshot.data);
+                // print(snapshot.data);
                 return ListView(
                   shrinkWrap: true,
                   children: <Widget>[

@@ -27,9 +27,9 @@ class Pc2TotalCard extends StatelessWidget {
           child: FutureBuilder<List<dynamic>>(
             future: fetchPc2TodaysEvents(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
-              print(snapshot.data);
+              // print(snapshot.data);
               if(snapshot.hasData){
-                print(snapshot.data);
+                // print(snapshot.data);
                 return ListView(
                   shrinkWrap: true,
                   children: <Widget>[
