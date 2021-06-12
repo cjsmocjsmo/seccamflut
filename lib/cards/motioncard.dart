@@ -50,11 +50,10 @@ class MotionCard extends StatelessWidget {
                 );
               } else {
               return CircularProgressIndicator();
-            }
-            }
-            ),
+            }}
           ),
         ),
+      ),
     );
   }
 }

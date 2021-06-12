@@ -7,7 +7,6 @@ import 'cards/stillcard.dart';
 import 'cards/pc1totalcard.dart';
 import 'cards/pc2totalcard.dart';
 
-
 Widget mainColumn = Column(
   children: <Widget>[
     sensorRow,
@@ -23,8 +22,7 @@ Widget sensorRow = Row(
     ),
     Expanded(
       child: StillCard(),
-    ), 
-    
+    ),
   ]
 );
 

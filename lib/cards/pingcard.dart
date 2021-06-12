@@ -7,9 +7,10 @@ class PingCard extends StatelessWidget {
   final String apiUrl = "http://192.168.0.26:8090/pingpc";
 
   Future<List<dynamic>> fetchPingEvents() async {
+
     var result = await http.get(Uri.parse(apiUrl));
-    // print(json.decode(result.body)['ping_results']);
     return json.decode(result.body)['ping_results'];
+
   }
 
   @override
@@ -28,9 +29,7 @@ class PingCard extends StatelessWidget {
           child: FutureBuilder<List<dynamic>>(
             future: fetchPingEvents(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
-              // print(snapshot.data);
               if(snapshot.hasData){
-                // print(snapshot.data);
                 return ListView(
                   shrinkWrap: true,
                   children: <Widget>[
@@ -47,12 +46,10 @@ class PingCard extends StatelessWidget {
               );
               } else {
               return CircularProgressIndicator();
-            }
-            }
-          ),
-
+            }}
           ),
         ),
+      ),
     );
   }
 }

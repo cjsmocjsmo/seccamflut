@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class StillCard extends StatelessWidget {
 
+  final String apiUrl = "http://192.168.0.26:8090/pc_last_still";
+
+  Future<List<dynamic>> fetchPc1TodaysEvents() async {
+    var result = await http.get(Uri.parse(apiUrl));
+    print(json.decode(result.body)['pc_last_still']);
+    return json.decode(result.body)['pc_last_still'];
+  }
 
 
 
@@ -12,7 +21,6 @@ class StillCard extends StatelessWidget {
       borderOnForeground: true,
       color: Colors.purple[600],
       child: InkWell(
-        
         splashColor: Colors.lightGreen[400] ,
         onTap: () {
           print('Card tapped.');
@@ -20,22 +28,33 @@ class StillCard extends StatelessWidget {
         child: SizedBox(
           width: 250,
           height: 100,
-          child:  ListView(
-                children: <Widget>[
-                  Center(
-                    child: Text('STILL', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
-                  ),
-                  Center(
-                    child: Text('08-08', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
-                  ),
-                  Center(
-                    child: Text('08-15', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
-                  ),
-                ]
+          child: FutureBuilder<List<dynamic>>(
+            future: fetchPc1TodaysEvents(),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              print(snapshot.data);
+              if(snapshot.hasData){
+                print(snapshot.data);
+                // print(snapshot.data[1]['Time']);
+                return ListView(
+                  children: <Widget>[
+                    Center(
+                      child: Text('STILL', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
+                    ),
+                    Center(
+                      child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
+                    ),
+                    Center(
+                      child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
+                    ),
+                  ]
+                );
+              } else {
+              return CircularProgressIndicator();
+            }
+            }
             ),
           ),
         ),
-      
     );
   }
 }

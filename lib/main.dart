@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'mainscreen.dart';
 
-
-
-
 void main() => runApp(MovFlo());
 
 class MovFlo extends StatelessWidget {
@@ -14,10 +11,6 @@ class MovFlo extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(title: _title, initialRoute: '/', routes: {
       '/': (context) => MainScreen(),
-      // '/Action': (context) => ActionScreen(),
-      
-
-      
     });
   }
 }

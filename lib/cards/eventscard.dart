@@ -28,9 +28,7 @@ class EventCard extends StatelessWidget {
           child: FutureBuilder<List<dynamic>>(
             future: fetchAllEvents(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
-              // print(snapshot.data);
               if(snapshot.hasData){
-                // print(snapshot.data);
                 return ListView(
                   shrinkWrap: true,
                   children: <Widget>[

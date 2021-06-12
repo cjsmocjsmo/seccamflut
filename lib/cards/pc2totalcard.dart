@@ -7,8 +7,10 @@ class Pc2TotalCard extends StatelessWidget {
   final String apiUrl = "http://192.168.0.26:8090/pc2_todays_events";
 
   Future<List<dynamic>> fetchPc2TodaysEvents() async {
+
     var result = await http.get(Uri.parse(apiUrl));
     return json.decode(result.body)['pc2_todays_events'];
+
   }
 
   @override
@@ -27,9 +29,7 @@ class Pc2TotalCard extends StatelessWidget {
           child: FutureBuilder<List<dynamic>>(
             future: fetchPc2TodaysEvents(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
-              // print(snapshot.data);
               if(snapshot.hasData){
-                // print(snapshot.data);
                 return ListView(
                   shrinkWrap: true,
                   children: <Widget>[

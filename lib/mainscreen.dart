@@ -4,12 +4,6 @@ import 'dart:convert';
 import 'maincolumn.dart';
 import 'cameras/pc1view.dart';
 
-
-
-
-
-
-
 class MainScreen extends StatelessWidget {
 
   Future<void> stopMov(stopURL) async {
@@ -43,48 +37,12 @@ class MainScreen extends StatelessWidget {
           backgroundColor: Colors.purple[900],
           bottom: TabBar(
             tabs: [
-
               Tab(icon: Icon(Icons.videocam)),
               Tab(icon: Icon(Icons.security)),
               Tab(icon: Icon(Icons.video_camera_front)),
             ],
           ),
         ),
-        // bottomNavigationBar: BottomAppBar(
-        //   color: Colors.lightGreen[900],
-        //   child: Row(
-        //     children: [
-        //       Spacer(),
-        //       IconButton(
-        //         icon: Icon(Icons.skip_previous, color: Colors.white), 
-        //         onPressed: () {
-        //           final String apiPrevious = "http://192.168.0.42:8181/Previous";
-        //           previousMov(apiPrevious);
-        //         },
-        //       ),
-        //       Spacer(),
-        //       IconButton(
-        //         icon: Icon(Icons.skip_next, color: Colors.white), 
-        //         onPressed: () {
-        //           final String apiNext = "http://192.168.0.42:8181/Next";
-        //           nextMov(apiNext);
-        //         },
-        //       ),
-        //       Spacer(),
-        //     ],
-        //   ),
-        // ),
-        // floatingActionButton:
-        //   FloatingActionButton(
-        //   child: Icon(Icons.close_sharp), 
-        //   onPressed: () { 
-        //     final String apiStop = "http://192.168.0.42:8181/Stop";
-        //     stopMov(apiStop); 
-        //   }
-        // ),
-        // floatingActionButtonLocation:
-        //     // FloatingActionButtonLocation.endDocked,
-        //     FloatingActionButtonLocation.endFloat,
         body: Container(
           decoration: BoxDecoration(
             color: Colors.purple[300],
@@ -92,16 +50,8 @@ class MainScreen extends StatelessWidget {
           child: TabBarView(
             children: [
               Pc1View(),
-              // Text('fuck'),
               mainColumn,
-              
-              
-               mainColumn,
-              // moviesListView,
-              // // tvShowsListView(),
-              // tvShowsListView(context),
-              // // lowerDecksListView(context),
-
+              mainColumn,
             ],
           ),
         ),
@@ -113,103 +63,3 @@ class MainScreen extends StatelessWidget {
     return stop;
   }
 }
-
-
-// Widget motionText = Card(child: ListTile(title: Text('One-line ListTile')));
-
-// Widget moviesListView = ListView.builder(
-//   padding: const EdgeInsets.all(10.0),
-//   itemCount: movies.length,
-//   itemBuilder: (BuildContext context, int index) {
-//     return 
-//     InkWell(
-//       splashColor: Colors.red,
-//       // onTap: () {}, // button pressed
-//       child: 
-
-      
-//       Container(
-//         height: 50,
-//         color: Colors.amber[400],
-//         child: Center(
-//             child: Text('${movies[index]}',
-//             style: TextStyle(
-//               fontWeight: FontWeight.bold,
-//               fontSize: 28.0,
-//             )
-//           )
-//         ),
-//       ),
-
-
-
-
-//       onTap: () {
-//         Navigator.pushNamed(context, '/${movies[index]}');
-//       },
-//     );
-//   }
-// );
-
-// Widget tvShowsListView(BuildContext context) {
-//   return ListView(
-//   shrinkWrap: true,
-//   padding: const EdgeInsets.all(10.0),
-//   children: <Widget>[
-    
-    
-    
-    
-    
-
-
-//   ]);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// This works DONT DELETE
-// Widget tvShowsListView = ListView.builder(
-//   padding: const EdgeInsets.all(10.0),
-//   itemCount: tvShows.length,
-//   itemBuilder: (BuildContext context, int index) {
-//     return InkWell(
-//       child: Container(
-//         height: 50,
-//         color: Colors.amber[400],
-//         child: Center(
-//             child: Text('${tvShows[index]}',
-//             style: TextStyle(
-//               fontWeight: FontWeight.bold,
-//               fontSize: 22.0,
-//             )
-//           )
-//         ),
-//       ),
-//       onTap: () {
-//         Navigator.pushNamed(
-//           context,
-//           '/${tvShows[index]}',
-//         );
-//       },
-//     );
-//   }
-// );
-
-
-
-
