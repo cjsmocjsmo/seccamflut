@@ -17,7 +17,6 @@ class Pc1TotalCard extends StatelessWidget {
       borderOnForeground: true,
       color: Colors.purple[600],
       child: InkWell(
-        
         splashColor: Colors.lightGreen[400] ,
         onTap: () {
           print('Card tapped.');
