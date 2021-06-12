@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'maincolumn.dart';
+import 'cameras/pc1view.dart';
 
 
 
@@ -90,8 +91,10 @@ class MainScreen extends StatelessWidget {
           ),
           child: TabBarView(
             children: [
+              Pc1View(),
+              // Text('fuck'),
               mainColumn,
-              Text('fuck'),
+              
               
                mainColumn,
               // moviesListView,
