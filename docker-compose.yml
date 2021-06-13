@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+
+  seccamflut:
+    image: seccamflut:0.1
+    build: .
+    
+    networks:
+      - seccamflut
+    ports:
+      - 7780:80
+    
+
+networks:
+  seccamflut:
+
