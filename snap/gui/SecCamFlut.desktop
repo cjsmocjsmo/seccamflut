@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=SecCamFlut
+Comment=Super Cool
+Exec=movflo
+Icon=${SNAP}/meta/gui/seccamflut.png
+Terminal=false
+Type=Application
+Catagories=Education

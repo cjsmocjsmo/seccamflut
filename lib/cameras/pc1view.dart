@@ -17,7 +17,7 @@ class Pc1View extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
-          color: Colors.lightGreenAccent.shade400,
+          color: Colors.purple.shade400,
         ),
         child: FutureBuilder<List<dynamic>>(
           future: fetchPc1View(),
@@ -38,22 +38,37 @@ class Pc1View extends StatelessWidget {
                     padding: const EdgeInsets.all(8),
                     child: GestureDetector(                       
                       onTap: () {
-                        
-                        // final String ap = _movfspath(snapshot.data[index]);
-                        // final String apiPU = "http://192.168.0.42:8181/OmxplayerPlayMediaReact?medPath=" + ap;
-                        // print(apiPU);
-                        // final String apiPlayUrl = apiPU;
-                        
-                        // foo(apiPlayUrl);
-                        // Navigator.pop(context);
-                      },
-                      child: Image.network(snapshot.data[index],
-                        fit: BoxFit.contain,
-                          // height: 400.0,
-                          width: 400.0,
+                        Navigator.push(context, MaterialPageRoute<void>(
+                          builder: (BuildContext context) {
+                          return Scaffold(
+                            appBar: AppBar(
+                              title: Text("PiCam1 View"),
+                              backgroundColor: Colors.purple.shade700,
+                            ),
+                            body: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.purple.shade400,
+                              ),
+                              child: Center(
+                                child: Image.network(snapshot.data[index],
+                                  fit: BoxFit.contain,
+                                    // height: 400.0,
+                                    width: 600.0,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
                       )
-                    )
-                  );
+                    );
+                  },
+                  child: Image.network(snapshot.data[index],
+                      fit: BoxFit.contain,
+                        // height: 400.0,
+                        width: 400.0,
+                    ),
+                  ),
+                );
               }
             );
             }else {

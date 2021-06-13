@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'maincolumn.dart';
 import 'cameras/pc1view.dart';
+import 'cameras/pc2view.dart';
 
 class MainScreen extends StatelessWidget {
 
@@ -34,11 +35,12 @@ class MainScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text("SecCams"),
-          backgroundColor: Colors.purple[900],
+          backgroundColor: Colors.purple.shade700,
           bottom: TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.videocam)),
               Tab(icon: Icon(Icons.security)),
+              Tab(icon: Icon(Icons.videocam)),
+              
               Tab(icon: Icon(Icons.video_camera_front)),
             ],
           ),
@@ -49,9 +51,9 @@ class MainScreen extends StatelessWidget {
           ),
           child: TabBarView(
             children: [
+              mainColumn,
               Pc1View(),
-              mainColumn,
-              mainColumn,
+              Pc2View(),
             ],
           ),
         ),

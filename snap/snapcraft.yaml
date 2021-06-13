@@ -1,0 +1,27 @@
+name: seccamflut
+version: 0.1.1
+summary: SecCamFlut
+description: Dash board for RPI security cameras
+
+confinement: strict
+base: core18
+grade: stable
+
+slots:
+  dbus-seccamflut-app:
+    interface: dbus
+    bus: session
+    name: org.seccamflut
+
+apps:
+  seccamflut:
+    command: seccamflut
+    extensions: [flutter-master]
+    plugs:
+    - network
+
+parts:
+  seccamflut:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart
