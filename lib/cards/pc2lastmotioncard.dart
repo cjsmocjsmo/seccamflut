@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class MotionCard extends StatelessWidget {
+class Pc2LastMotionCard extends StatelessWidget {
 
-  final String apiUrl = "http://192.168.0.26:8090/pc_last_moving";
+  final String apiUrl = "http://192.168.0.26:8090/pc2_last_moving";
 
-  Future<List<dynamic>> fetchPc1TodaysEvents() async {
+  Future<List<dynamic>> fetchPc2TodaysEvents() async {
     var result = await http.get(Uri.parse(apiUrl));
-    print(json.decode(result.body)['pc_last_moving']);
-    return json.decode(result.body)['pc_last_moving'];
+    print(json.decode(result.body)['pc2_last_moving']);
+    return json.decode(result.body)['pc2_last_moving'];
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -28,24 +26,22 @@ class MotionCard extends StatelessWidget {
           width: 275,
           height: 100,
           child: FutureBuilder<List<dynamic>>(
-            future: fetchPc1TodaysEvents(),
+            future: fetchPc2TodaysEvents(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               print(snapshot.data);
               if(snapshot.hasData){
                 print(snapshot.data);
-                // print(snapshot.data[1]['Time']);
                 return ListView(
                 children: <Widget>[
-                  
                   Center(
-                    child: Text('MOTION', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
+                    child: Text('PC2 MOTION', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
                   ),
                   Center(
                     child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
                   ),
-                  Center(
-                    child: Text('${snapshot.data[1]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
-                    ),
+                  // Center(
+                  //   child: Text('${snapshot.data[1]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
+                  //   ),
                   ]
                 );
               } else {

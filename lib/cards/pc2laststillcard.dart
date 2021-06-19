@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class StillCard extends StatelessWidget {
+class Pc2LastStillCard extends StatelessWidget {
 
-  final String apiUrl = "http://192.168.0.26:8090/pc_last_still";
+  final String apiUrl = "http://192.168.0.26:8090/pc2_last_still";
 
-  Future<List<dynamic>> fetchPc1TodaysEvents() async {
+  Future<List<dynamic>> fetchPc2TodaysEvents() async {
     var result = await http.get(Uri.parse(apiUrl));
-    print(json.decode(result.body)['pc_last_still']);
-    return json.decode(result.body)['pc_last_still'];
+    print(json.decode(result.body)['pc2_last_still']);
+    return json.decode(result.body)['pc2_last_still'];
   }
 
 
@@ -29,7 +29,7 @@ class StillCard extends StatelessWidget {
           width: 250,
           height: 100,
           child: FutureBuilder<List<dynamic>>(
-            future: fetchPc1TodaysEvents(),
+            future: fetchPc2TodaysEvents(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               print(snapshot.data);
               if(snapshot.hasData){
@@ -38,14 +38,14 @@ class StillCard extends StatelessWidget {
                 return ListView(
                   children: <Widget>[
                     Center(
-                      child: Text('STILL', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
+                      child: Text('PC2 STILL', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
                     ),
                     Center(
                       child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
                     ),
-                    Center(
-                      child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
-                    ),
+                    // Center(
+                    //   child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
+                    // ),
                   ]
                 );
               } else {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'mainscreen.dart';
 
-void main() => runApp(MovFlo());
+void main() => runApp(SecCam());
 
-class MovFlo extends StatelessWidget {
-  const MovFlo({Key? key}) : super(key: key);
+class SecCam extends StatelessWidget {
+  const SecCam({Key? key}) : super(key: key);
 
-  static const String _title = "MovFlo";
+  static const String _title = "SecCam";
 
   Widget build(BuildContext context) {
     return MaterialApp(title: _title, initialRoute: '/', routes: {
