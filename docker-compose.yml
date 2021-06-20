@@ -3,7 +3,7 @@ version: "3.3"
 services:
 
   seccamflut:
-    image: seccamflut:0.1.3
+    image: seccamflut:0.1.4
     build: .
     
     networks:
