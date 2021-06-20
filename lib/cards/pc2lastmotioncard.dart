@@ -39,9 +39,9 @@ class Pc2LastMotionCard extends StatelessWidget {
                   Center(
                     child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
                   ),
-                  // Center(
-                  //   child: Text('${snapshot.data[1]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
-                  //   ),
+                  Center(
+                    child: Text('${snapshot.data[1]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
+                    ),
                   ]
                 );
               } else {
