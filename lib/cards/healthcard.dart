@@ -46,7 +46,7 @@ class HealthCard extends StatelessWidget {
                 width: 50,
                 height: 50,
                 child: CircularProgressIndicator(),
-              )
+              );
               
             }}
           ),
