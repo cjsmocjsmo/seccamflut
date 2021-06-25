@@ -45,7 +45,11 @@ class Pc1LastMotionCard extends StatelessWidget {
                   ]
                 );
               } else {
-              return CircularProgressIndicator();
+              return SizedBox(
+                width: 50,
+                height: 50,
+                child: CircularProgressIndicator(),
+              );
             }}
           ),
         ),
