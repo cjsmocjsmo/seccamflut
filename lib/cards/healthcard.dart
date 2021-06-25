@@ -45,7 +45,7 @@ class HealthCard extends StatelessWidget {
               return SizedBox(
                 width: 50,
                 height: 50,
-                child: CircularProgressIndicator();
+                child: CircularProgressIndicator(),
               )
               
             }}
