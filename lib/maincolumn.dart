@@ -53,15 +53,16 @@ Widget sensorRow3 = Row(
       child: HealthCard(),
     ),
     Expanded(
-      child: EventCard(),
+      child: PingCard(),
     ),
+    
   ]
 );
 
 Widget sensorRow4 = Row(
   children: <Widget>[
     Expanded(
-      child: PingCard(),
+      child: EventCard(),
     ),
     Expanded(
       child: Pc1TotalCard(),
