@@ -36,7 +36,7 @@ class HealthCard extends StatelessWidget {
                     Center(
                       child: Text('HEALTH', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
                     ),
-                    if (snapshot.date[0] == "None") {
+                    if (snapshot.data[0] == "None") {
                       Center(
                         child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
                       ),
