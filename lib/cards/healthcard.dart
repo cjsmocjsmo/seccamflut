@@ -30,6 +30,7 @@ class HealthCard extends StatelessWidget {
             future: fetchHealthEvents(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               if(snapshot.hasData){
+                print(snapshot.data);
                 return ListView(
                   shrinkWrap: true,
                   children: <Widget>[
