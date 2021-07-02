@@ -29,27 +29,35 @@ class HealthCard extends StatelessWidget {
           child: FutureBuilder<List<dynamic>>(
             future: fetchHealthEvents(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
-              if(snapshot.hasData){
-                return ListView(
-                  shrinkWrap: true,
-                  children: <Widget>[
-                    Center(
-                      child: Text('HEALTH', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
-                    ),
-                    if (snapshot.data[0] == "None") {
+              if(snapshot.hasData) {
+                if (snapshot.data[0] == "None") {
+                  return ListView(
+                    shrinkWrap: true,
+                    children: <Widget>[
+                      Center(
+                        child: Text('HEALTH', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
+                      ),
                       Center(
                         child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
                       ),
-                    } else {
+                    ]
+                  );
+                } else {
+                  return ListView(
+                    shrinkWrap: true,
+                    children: <Widget>[
+                      Center(
+                        child: Text('HEALTH', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
+                      ),
                       Center(
                         child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
                       ),
                       Center(
                         child: Text('${snapshot.data[1]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
                       ),
-                    }
-                  ]
-              );
+                    ]
+                  );
+                }
               } else {
               return SizedBox(
                 width: 50,
@@ -57,10 +65,30 @@ class HealthCard extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
               
-            }}
+            }
+            
+            
+            
+            
+            }
           ),
         ),
       ),
     );
   }
 }
+
+return ListView(
+                  shrinkWrap: true,
+                  children: <Widget>[
+                    Center(
+                      child: Text('HEALTH', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
+                    ),
+                    Center(
+                      child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
+                    ),
+                    Center(
+                      child: Text('${snapshot.data[1]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
+                    ),
+                  ]
+              );
