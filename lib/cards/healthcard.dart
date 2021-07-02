@@ -59,17 +59,12 @@ class HealthCard extends StatelessWidget {
                   );
                 }
               } else {
-              return SizedBox(
-                width: 50,
-                height: 50,
-                child: CircularProgressIndicator(),
-              );
-              
-            }
-            
-            
-            
-            
+                return SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: CircularProgressIndicator(),
+                );
+              }
             }
           ),
         ),
@@ -77,18 +72,3 @@ class HealthCard extends StatelessWidget {
     );
   }
 }
-
-// return ListView(
-//                   shrinkWrap: true,
-//                   children: <Widget>[
-//                     Center(
-//                       child: Text('HEALTH', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
-//                     ),
-//                     Center(
-//                       child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
-//                     ),
-//                     Center(
-//                       child: Text('${snapshot.data[1]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
-//                     ),
-//                   ]
-//               );
