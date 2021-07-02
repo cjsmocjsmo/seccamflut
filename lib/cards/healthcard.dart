@@ -30,20 +30,24 @@ class HealthCard extends StatelessWidget {
             future: fetchHealthEvents(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               if(snapshot.hasData){
-                print(snapshot.data);
                 return ListView(
                   shrinkWrap: true,
                   children: <Widget>[
                     Center(
                       child: Text('HEALTH', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22.0,)),
                     ),
-                    
-                    Center(
-                      child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
-                    ),
-                    // Center(
-                    //   child: Text('${snapshot.data[1]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
-                    // ),
+                    if (snapshot.date[0] == "None") {
+                      Center(
+                        child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
+                      ),
+                    } else {
+                      Center(
+                        child: Text('${snapshot.data[0]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
+                      ),
+                      Center(
+                        child: Text('${snapshot.data[1]}', style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold, fontSize: 26.0,)),
+                      ),
+                    }
                   ]
               );
               } else {

@@ -30,7 +30,6 @@ class Pc2LastMotionCard extends StatelessWidget {
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               print(snapshot.data);
               if(snapshot.hasData){
-                print(snapshot.data);
                 return ListView(
                 children: <Widget>[
                   Center(

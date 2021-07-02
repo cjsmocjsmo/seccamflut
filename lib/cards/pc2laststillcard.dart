@@ -33,7 +33,6 @@ class Pc2LastStillCard extends StatelessWidget {
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               print(snapshot.data);
               if(snapshot.hasData){
-                print(snapshot.data);
                 // print(snapshot.data[1]['Time']);
                 return ListView(
                   children: <Widget>[
