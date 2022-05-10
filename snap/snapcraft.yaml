@@ -1,10 +1,10 @@
 name: seccamflut
-version: 0.1.7
+version: 0.1.9
 summary: SecCamFlut
 description: Dash board for RPI security cameras
 
 confinement: strict
-base: core18
+base: core20
 grade: stable
 
 slots:
